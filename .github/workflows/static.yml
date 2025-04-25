@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue sur ma boutique</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue dans ma boutique en ligne</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Nos Produits</h2>
+            <ul>
+                <li><a href="produits.html">Voir nos produits</a></li>
+                <li><a href="contact.html">Contactez-nous</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Ma Boutique</p>
+    </footer>
+</body>
+</html>
+
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Produits</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Nos Produits</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Produit 1</h2>
+            <p>Description du produit 1.</p>
+        </section>
+        <section>
+            <h2>Produit 2</h2>
+            <p>Description du produit 2.</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Ma Boutique</p>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactez-nous</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Contactez-nous</h1>
+    </header>
+    <main>
+        <form action="#" method="post">
+            <label for="name">Nom:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <input type="submit" value="Envoyer">
+        </form>
+    </main>
+    <footer>
+        <p>© 2025 Ma Boutique</p>
+    </footer>
+</body>
+</html>
+# Ma Boutique en Ligne
+
+Bienvenue dans ma boutique en ligne ! Ce site propose divers produits, tels que des carnets, des vêtements, et bien plus.
+
+## Fonctionnalités
+- Achetez des produits facilement.
+- Contactez-nous pour toute question.
+
+### Auteur
+- Ma Boutique
+
